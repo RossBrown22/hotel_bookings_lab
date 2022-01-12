@@ -1,7 +1,7 @@
 import BookingsForm from "../components/BookingsForm";
 import BookingsList from "../components/BookingsList";
 import {getBookings} from "../BookingsService";
-import { postBookings } from "../BookingsService";
+import { deleteBookings } from "../BookingsService";
 
 import { useState, useEffect } from 'react';
 
@@ -22,7 +22,7 @@ const BookingsContainer = () => {
     return (
         <>
             <BookingsForm addBooking={addBooking}/>
-            <BookingsList bookings={bookings}/>
+            <BookingsList bookings={bookings} deleteBookings={deleteBookings}/>
         </>
     )
 }

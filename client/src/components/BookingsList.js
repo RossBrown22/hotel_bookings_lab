@@ -1,4 +1,4 @@
-const BookingsList = ({ bookings }) => {
+const BookingsList = ({ bookings, deleteBookings }) => {
 
     const listItems = () => {
         return (
@@ -7,6 +7,7 @@ const BookingsList = ({ bookings }) => {
                     <div key={booking._id}>
                         <p>Guest: {booking.name}</p>
                         <p>Email: {booking.email}</p>
+                        <button type="button" onClick={() => deleteBookings(booking._id)}>Delete</button>
                     </div>
                     
                 )
