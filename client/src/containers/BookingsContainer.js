@@ -15,8 +15,7 @@ const BookingsContainer = () => {
     }, []);
 
     const addBooking = (booking) => {
-        const temp = bookings.map(b => b);
-        temp.push(booking);
+        const temp = [...bookings, booking];
         setBookings(temp);
     }
 

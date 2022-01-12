@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { postBookings } from '../BookingsService';
 
-const BookingsForm = (({addBooking}) => {
+const BookingsForm = ({ addBooking }) => {
 
     const [formData, setFormData] = useState({})
 
@@ -12,23 +12,23 @@ const BookingsForm = (({addBooking}) => {
 
     const onSubmit = (evt) => {
         evt.preventDefault();
-        const formData = evt.target.value
-            postBookings(formData).then((data) => {
-                addBooking(data);
-            })
+        console.log("form data:", formData)
+        postBookings(formData).then((data) => {
+            addBooking(data);
+        })
     }
 
     return (
         <form onSubmit={onSubmit}>
             <label>Name:</label>
-            <input onChange={onChange} id="name" type="text" required/>
-            <br/>
+            <input onChange={onChange} id="name" type="text" required />
+            <br />
             <label>Email:</label>
-            <input onChange={onChange} id="email" type="text" required/>
-            <br/>
-            <input type="submit" value="Create Booking" id="save"/>
+            <input onChange={onChange} id="email" type="text" required />
+            <br />
+            <input type="submit" value="Create Booking" id="save" />
         </form>
     )
-})
+}
 
 export default BookingsForm;

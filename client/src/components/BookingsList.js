@@ -4,7 +4,7 @@ const BookingsList = ({ bookings }) => {
         return (
             bookings.map(booking => {
                 return (
-                    <div key={booking.id}>
+                    <div key={booking._id}>
                         <p>Guest: {booking.name}</p>
                         <p>Email: {booking.email}</p>
                     </div>
